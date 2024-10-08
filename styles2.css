@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap');
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/assets/font/Helvetica.ttf');
+}
+
+@font-face {
+    font-family: 'Lora';
+    /* src: url('/assets/font/Lora-VariableFont_wght.ttf'); */
+    src: url('/assets/font/Lora-Italic-VariableFont_wght.ttf');
+}
+
 *,
 *::before,
 *::after {
@@ -18,7 +30,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: "PP Neue Montreal", sans-serif;
+    font-family: "Lora", sans-serif;
     overflow: hidden;
 }
 
@@ -45,10 +57,10 @@ h1 {
     left: 2em;
 }
 
-.sponsor-wrapper {
+/* .sponsor-wrapper {
     position: absolute;
     visibility: hidden;
-}
+} */
 
 .logo video {
     width: 125px;
@@ -61,7 +73,7 @@ h1 {
 .menu-logo a {
     text-decoration: none;
     text-transform: uppercase;
-    font-family: "Schabo", sans-serif;
+    font-family: "Lora", sans-serif;
     font-size: 60px;
     font-weight: lighter;
 }
@@ -277,7 +289,7 @@ h1 {
 .header h2 {
     color: #fff;
     text-transform: uppercase;
-    font-family: "Schabo", sans-serif;
+    font-family: "Lora", sans-serif;
     font-size: 500px;
     font-weight: lighter;
     line-height: 100%;
@@ -393,7 +405,8 @@ section.info {
 
 .header-info p {
     padding: 1em;
-    font-family: "PP Editorial Old", sans-serif;
+    font-family: "Lora", sans-serif;
+    font-style: italic;
     font-size: 52px;
     font-weight: lighter;
     text-transform: uppercase;
@@ -471,6 +484,28 @@ section.website-content {
 .website-content {
     font-size: 72px;
     letter-spacing: 0;
+}
+
+@media screen and (max-width: 900px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .logo video {
+        visibility: hidden;
+    }
+
+    section.hero h1 {
+        font-size: 50px;
+    }
+
+    .header-info p {
+        font-size: 30px;
+    }
+
+    section.info {
+        height: 80vh;
+    }
 }
 
 /* Lenis */
