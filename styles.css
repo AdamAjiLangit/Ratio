@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #141414;
+    font-family: "Neue Montreal", sans-serif;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.nav-item {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.nav-item a {
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.35;
+}
+
+.nav-item a#active {
+    opacity: 1;
+}
+
+.hero {
+    position: absolute;
+    width: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.icon,
+.icon-2 {
+    flex: 0.5;
+    padding: 0 5em;
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.icon-2 {
+    text-align: right;
+}
+
+.icon ion-icon,
+.icon-2 ion-icon {
+    transform: scale(0);
+}
+
+.title {
+    flex: 2;
+    text-align: center;
+    font-size: 120px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: scale(0);
+}
+
+.title p {
+    position: relative;
+    top: 50px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.preview {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    display: flex;
+    gap: 0.3em;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.preview img {
+    position: relative;
+    top: 100px;
+    width: 80px;
+    height: 50px;
+}
+
+.slide-num {
+    margin: 3em 0;
+    text-align: center;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.slide-num p {
+    position: relative;
+    top: 30px;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1em;
+}
+
+.container .col {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.col .item {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    background: gray;
+    overflow: hidden;
+}
+
+.c-1,
+.c-3,
+.c-5 {
+    top: 100%;
+}
+
+.c-1 .item,
+.c-3 .item,
+.c-5 .item {
+    top: 100%;
+}
+
+.c-2 .item,
+.c-4 .item {
+    top: -100%;
+}
+
+@media (max-width: 900px) {
+    .slide-num p {
+        text-align: left;
+        padding-left: 2em;
+        margin-bottom: 2.5em;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .icon,
+    .icon-2 {
+        padding: 0 1rem;
+        font-size: 16px;
+    }
+
+    .preview img {
+        width: 60px;
+        height: 40px;
+    }
+}

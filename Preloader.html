@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/icon/boy.ico">
+    <title>GSAP Animation</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col c-1">
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+        </div>
+        <div class="col c-2">
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+        </div>
+        <div class="col c-3">
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+        </div>
+        <div class="col c-4">
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+        </div>
+        <div class="col c-5">
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+            <div class="item"><img src="assets/hero.jpg" alt=""></div>
+            <div class="item"><img src="assets/img1.png" alt=""></div>
+        </div>
+    </div>
+    <div class="content">
+        <nav>
+            <div class="nav-item">
+                <a href="#" id="active">Work</a>
+            </div>
+            <div class="nav-item">
+                <a href="#">About</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="icon"><ion-icon name="add-sharp"></ion-icon></div>
+            <div class="title">SYMPHONIA</div>
+            <div class="icon-2"><ion-icon name="add-sharp"></ion-icon></div>
+        </div>
+
+        <footer>
+            <div class="preview">
+                <img src="assets/img1.png" alt="">
+                <img src="assets/img1.png" alt="">
+                <img src="assets/img1.png" alt="">
+                <img src="assets/img1.png" alt="">
+                <img src="assets/img1.png" alt="">
+                <img src="assets/img1.png" alt="">
+                <img src="assets/img1.png" alt="">
+            </div>
+
+            <div class="slide-num">
+                <p>1 &mdash; 3</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script>
+    let tl = gsap.timeline({ delay: 0 });
+    tl.to(".col", {
+        top: 0,
+        duration: 3,
+        ease: "power4.inOut"
+    });
+
+    tl.to(".c-1 .item", {
+        top: 0,
+        stagger: 0.25,
+        duration: 3,
+        ease: "power4.inOut"
+    }, "-=2");
+
+    tl.to(".c-2 .item", {
+        top: 0,
+        stagger: -0.25,
+        duration: 3,
+        ease: "power4.inOut"
+    }, "-=4");
+
+    tl.to(".c-3 .item", {
+        top: 0,
+        stagger: 0.25,
+        duration: 3,
+        ease: "power4.inOut"
+    }, "-=4");
+
+    tl.to(".c-4 .item", {
+        top: 0,
+        stagger: -0.25,
+        duration: 3,
+        ease: "power4.inOut"
+    }, "-=4");
+
+    tl.to(".c-5 .item", {
+        top: 0,
+        stagger: 0.25,
+        duration: 3,
+        ease: "power4.inOut"
+    }, "-=4");
+
+    tl.to(".container", {
+        scale: 6,
+        duration: 4,
+        ease: "power4.inOut"
+    }, "-=2");
+
+    tl.to(".nav-item a, .title p, .slide-num p, .preview img", {
+        top: 0,
+        stagger: 0.075,
+        duration: 1,
+        ease: "power3.out"
+    }, "-=1.5");
+
+    tl.to(".icon ion-icon, .icon-2 ion-icon, .title", {
+        scale: 1,
+        stagger: 0.05,
+        ease: "power3.out"
+    }, "-=1");
+</script>
+
+</html>
