@@ -1,9 +1,143 @@
+function startLoader() {
+    let counterElement = document.querySelector(".counter");
+    let currentValue = 0;
+
+    function updateCounter() {
+        if (currentValue === 100) {
+            return;
+        }
+
+        currentValue += Math.floor(Math.random() * 10) + 1;
+
+        if (currentValue > 100) {
+            currentValue = 100;
+        }
+
+        counterElement.textContent = currentValue + "%";
+
+        let delay = Math.floor(Math.random() * 200) + 250;
+        setTimeout(updateCounter, delay);
+    }
+    updateCounter();
+}
+
+gsap.from(".circles", 2, {
+    top: "-100%",
+    ease: "elastic.out",
+    delay: 0.5,
+});
+
+gsap.to(".circle-inner", 1, {
+    width: "75px",
+    height: "75px",
+    ease: "power4.inOut",
+    delay: 2,
+});
+
+gsap.to(".circle-inner-rotator", 1, {
+    scale: 1,
+    ease: "power4.inOut",
+    delay: 0.5,
+});
+
+let tl = gsap.timeline({ repeat: -1 });
+
+tl.fromTo(".circles",
+    { rotation: 0 },
+    { rotation: 90, duration: 2.5, ease: "power4.inOut" }
+)
+    .fromTo(".circles",
+        { rotation: 90 },
+        { rotation: 180, duration: 2.5, ease: "power4.inOut" }
+    )
+    .fromTo(".circles",
+        { rotation: 180 },
+        { rotation: 270, duration: 2.5, ease: "power4.inOut" }
+    )
+    .fromTo(".circles",
+        { rotation: 270 },
+        { rotation: 360, duration: 2.5, ease: "power4.inOut" }
+    );
+
+// gsap.to(".block", 0.75, {
+//     display: "block",
+//     height: "200px",
+//     ease: "power4.inOut",
+//     delay: 4,
+// });
+
+// gsap.to(".block", 0.75, {
+//     width: "800px",
+//     ease: "power4.inOut",
+//     delay: 4.5,
+// });
+
+gsap.fromTo(".containers", {
+    duration: 2,
+    left: "100%",
+    scale: 0.5,
+    ease: "power4.inOut",
+    delay: 6,
+}, {
+    duration: 2,
+    left: "50%",
+    transform: "translateX(-50%)",
+    scale: 0.5,
+    ease: "power4.inOut",
+    delay: 6,
+});
+
+gsap.to("circles", 1.5, {
+    rotation: 360,
+    ease: "power4.inOut",
+    delay: 6.5,
+});
+
+gsap.to(".loader", 2.5, {
+    // scale: 0,
+    transform: "translateY(-100%)",
+    ease: "power4.inOut",
+    delay: 6,
+});
+
+gsap.to(".containers", 2, {
+    scale: 1,
+    ease: "power4.inOut",
+    delay: 5.9,
+});
+
+gsap.to(".counter", 2, {
+    opacity: 0,
+    ease: "power4.inOut",
+    delay: 5,
+})
+
+startLoader();
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        document.querySelector('.loader').style.display = 'none';
+
+        gsap.fromTo(
+            ".hero h1",
+            { y: 100, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                ease: "power4.out",
+                delay: 0.5,
+            }
+        );
+    }, 7250);
+});
+
 const lenis = new Lenis();
 
 lenis.on("scroll", ScrollTrigger.update);
 
 gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
+    lenis.raf(time * 500);
 });
 
 gsap.ticker.lagSmoothing(0);
