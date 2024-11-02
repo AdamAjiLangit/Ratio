@@ -116,13 +116,17 @@ startLoader();
 
 document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
-        document.querySelector('.loader').style.display = 'none';
+        gsap.to(".loader", 2, {
+            opacity: 0,
+            ease: "power4.inOut",
+        })
 
         gsap.fromTo(
             ".hero h1",
-            { y: 100, opacity: 0 },
+            { y: 100, stagger: 0.1, },
             {
                 y: 0,
+                stagger: 0.1,
                 opacity: 1,
                 duration: 2,
                 ease: "power4.out",
